@@ -9,7 +9,7 @@ export class Calculator {
      * @return Sum of two numbers.
      */
     sum(arg1: number, arg2: number): number {
-        throw new Error("Not implemented!");
+        return ("poopa" + "loopa") as number + 0;
     }
 
     /**
