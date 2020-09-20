@@ -53,8 +53,8 @@ while (true) {
 
 let integerArray: number[] = [];
 
-integerArray.push(1);
-integerArray.push(2);
+integerArray.push(20);
+integerArray.push(30);
 // integerArray.push("213");
 
 console.log(integerArray);
@@ -70,7 +70,13 @@ console.log(integerArray.slice(0, 1));
 console.log(integerArray);
 
 let dictionary = {
-  "foo": "bar"  
+  "foo": "bar"
+};
+
+let weather = {
+    "temperature": 20,
+    "temperatureUnit": "K",
+    "moisture": "75%"
 };
 
 dictionary["bar"] = "asd";
@@ -99,7 +105,7 @@ function addAndPrint(argumentToPrint: number): string {
     return newValue;
 }
 
-function voidSomeFunction(arg1, arg2, arg3): void {
+function voidSomeFunction(arg1, arg2, arg3) {
     console.log("Doing something...");
 }
 
@@ -119,8 +125,8 @@ function functionThrowingError(): never {
 
 try {
     functionThrowingError();
-} catch (e) {
-    console.log(e);
+} catch (error) {
+    console.log(error);
 }
 
 console.log("I'm here");
@@ -152,7 +158,7 @@ class SomeClass {
 
 }
 
-let obj = new SomeClass();
+let obj: SomeClass = new SomeClass();
 
 obj.someMethod("1");
 
@@ -165,5 +171,47 @@ let res1 = fnMethodRes(" ivan");
 
 console.log(res);
 console.log(res1);
+
+class Patient {
+
+    name: string;
+
+    ssn: number;
+
+    history: Order[] = [];
+
+    constructor(name: string, ssn: number) {
+        this.name = name;
+        this.ssn = ssn;
+    }
+
+    createOrder(text: string) {
+        let order = new Order(this, new Date(), text);
+        this.history.push(order);
+    }
+
+}
+
+class Order {
+
+    patient: Patient;
+
+    date: Date;
+
+    text: string;
+
+    constructor(patient: Patient, date: Date, text: string) {
+        this.patient = patient;
+        this.date = date;
+        this.text = text;
+    }
+
+}
+
+let patient = new Patient("Ivan Ivanov", 123123);
+
+patient.createOrder("Headache");
+
+console.log(patient.history);
 
 

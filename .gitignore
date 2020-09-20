@@ -1,3 +1,12 @@
-bin
-node_modules
+.idea/
+node_modules/
+src/**/*.js
+src/**/*.js.map
+typings/
+dist/
+coverage/
+*.log
 package-lock.json
+*.lock
+thirdparty/node/
+bin/

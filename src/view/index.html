@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            background: #0f0;
+            color: black;
+        }
+
+        .exit-button {
+            background: #f00;
+            color: white;
+        }
+
+        #enter-button {
+            font-size: 25px;
+        }
+
+    </style>
+
+    <script>
+        function helloWorld() {
+            alert("Hello World!");
+        }
+
+        function inputChanged(event) {
+            alert(event.key);
+        }
+    </script>
+</head>
+<body>
+    <button id="press-me-button" onclick="helloWorld()">
+        Нажми меня
+    </button>
+    <button id="enter-button">
+        Вход
+    </button>
+
+    <label>
+        Возраст
+        <input type="number" onkeypress="inputChanged(event)">
+    </label>
+
+    <span>Пример текста1</span>
+    <span>Пример текста2</span>
+    <button class="exit-button">
+        Выход
+    </button>
+    <button class="exit-button">
+        Выход2
+    </button>
+</body>
+</html>
