@@ -8,7 +8,8 @@ export class ArraySummarizer {
      * @return Sum of the array items.
      */
     sumArrayItems(array: number[]): number {
-        throw new Error("Not implemented!");
+        return array.reduce(function(acc, curr) {
+            return acc + curr
+        })
     }
-
 }
